@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.active {
+    @apply bg-blue-600 font-bold;
+}
+
+.validator-hint {
+    @apply mt-0 p-2 visible bg-[#dc3545] text-slate-50 rounded-lg;
+}
