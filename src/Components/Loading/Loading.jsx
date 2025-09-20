@@ -3,15 +3,10 @@ import { MagnifyingGlass } from "react-loader-spinner"
 const Loading = () => {
     return (
         <div className='h-screen flex justify-center items-center'>
-            <MagnifyingGlass
-                visible={true}
+            <Loader2
                 height="280"
                 width="280"
-                ariaLabel="magnifying-glass-loading"
-                wrapperStyle={{}}
-                wrapperClass="magnifying-glass-wrapper"
-                glassColor="#c0efff"
-                color="#e15b64"
+                lassName="animate-spin"
             />
         </div>
     )

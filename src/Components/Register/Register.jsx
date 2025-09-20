@@ -4,7 +4,6 @@ import dayjs from "dayjs";
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { ColorRing } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -182,15 +181,8 @@ const Register = () => {
                     {renderError('gender')}
                 </div>
 
-                <button type='submit' className="btn btn-primary w-full" disabled={isLoading}>{isLoading ? <ColorRing
-                    visible={true}
-                    height="100%"
-                    width="100%"
-                    ariaLabel="color-ring-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="color-ring-wrapper"
-                    colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-                /> : "Register"}</button>
+                <button type='submit' className="btn btn-primary w-full" disabled={isLoading}>{isLoading ? <Loader2 className="animate-spin" height="100%"
+                    width="100%" /> : "Register"}</button>
             </form>
         </section>
     )

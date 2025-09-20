@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
-import { ColorRing } from 'react-loader-spinner';
 
 const AddPost = () => {
     const modalRef = useRef(null);
@@ -33,15 +32,15 @@ const AddPost = () => {
         return errors[fieldName] ? '!border-[#dc3545]' : '';
     }
 
-    function checkImg(fileList) {
-        const file = fileList?.[0];
-        if (!file) return 'empty';
-        const allowedTypes = ["jpg", "jpeg", "png"];
-        const isValidType = allowedTypes.some((type) => file.type.includes(type));
-        if (!isValidType) return "Image type not allowed (only JPG, JPEG, PNG).";
-        if (file.size / (1024 * 1024) > 5) return "Image size not allowed (must be less than 5MB).";
-        return true;
-    }
+    // function checkImg(fileList) {
+    //     const file = fileList?.[0];
+    //     if (!file) return 'empty';
+    //     const allowedTypes = ["jpg", "jpeg", "png"];
+    //     const isValidType = allowedTypes.some((type) => file.type.includes(type));
+    //     if (!isValidType) return "Image type not allowed (only JPG, JPEG, PNG).";
+    //     if (file.size / (1024 * 1024) > 5) return "Image size not allowed (must be less than 5MB).";
+    //     return true;
+    // }
 
     useEffect(() => {
         return () => {
@@ -124,15 +123,8 @@ const AddPost = () => {
                                 </div>
                                 {renderError('img')}
                             </>}
-                        <button type='submit' className="py-2.5 px-4 text-xs font-medium ms-auto block btn btn-primary mt-4" disabled={isPending}>{isPending ? <ColorRing
-                            visible={true}
-                            height="100%"
-                            width="100%"
-                            ariaLabel="color-ring-loading"
-                            wrapperStyle={{}}
-                            wrapperClass="color-ring-wrapper"
-                            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-                        /> : "Add Post"}</button>
+                        <button type='submit' className="py-2.5 px-4 text-xs font-medium ms-auto block btn btn-primary mt-4" disabled={isPending}>{isPending ? <Loader2 className="animate-spin" height="100%"
+                            width="100%" /> : "Add Post"}</button>
                     </form>
                     <form method="dialog">
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
