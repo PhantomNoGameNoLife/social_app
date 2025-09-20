@@ -1,5 +1,3 @@
-import { ColorRing } from 'react-loader-spinner'
-
 const LoadingRing = ({ ht }) => {
     return (
         <Loader2 height={ht || "100%"}
