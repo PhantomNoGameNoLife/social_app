@@ -1,3 +1,4 @@
+import { Loader2 } from "lucide-react";
 const LoadingRing = ({ ht }) => {
     return (
         <Loader2 height={ht || "100%"}
