@@ -5,6 +5,7 @@ import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { Loader } from 'lucide-react';
 
 const Register = () => {
     const [show, setShow] = useState(false);
@@ -181,7 +182,7 @@ const Register = () => {
                     {renderError('gender')}
                 </div>
 
-                <button type='submit' className="btn btn-primary w-full" disabled={isLoading}>{isLoading ? <Loader2 className="animate-spin" height="100%"
+                <button type='submit' className="btn btn-primary w-full" disabled={isLoading}>{isLoading ? <Loader className="animate-spin" height="100%"
                     width="100%" /> : "Register"}</button>
             </form>
         </section>
