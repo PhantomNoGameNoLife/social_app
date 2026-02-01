@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
+import { Loader } from 'lucide-react';
 
 const AddPost = () => {
     const modalRef = useRef(null);
@@ -123,7 +124,7 @@ const AddPost = () => {
                                 </div>
                                 {renderError('img')}
                             </>}
-                        <button type='submit' className="py-2.5 px-4 text-xs font-medium ms-auto block btn btn-primary mt-4" disabled={isPending}>{isPending ? <Loader2 className="animate-spin" height="100%"
+                        <button type='submit' className="py-2.5 px-4 text-xs font-medium ms-auto block btn btn-primary mt-4" disabled={isPending}>{isPending ? <Loader className="animate-spin" height="100%"
                             width="100%" /> : "Add Post"}</button>
                     </form>
                     <form method="dialog">
