@@ -5,6 +5,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext';
+import { Loader } from 'lucide-react';
 
 const Login = () => {
     const { insertUserToken } = useContext(AuthContext)
@@ -96,7 +97,7 @@ const Login = () => {
                     {renderError('password')}
                 </div>
 
-                <button type='submit' className="btn btn-primary w-full" disabled={isLoading}>{isLoading ? <Loader2 className="animate-spin" height="100%"
+                <button type='submit' className="btn btn-primary w-full" disabled={isLoading}>{isLoading ? <Loader className="animate-spin" height="100%"
                     width="100%" /> : "Login"}</button>
             </form>
         </section>
